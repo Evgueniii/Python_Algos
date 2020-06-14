@@ -15,3 +15,29 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ РЕКУРСИЮ
 """
+even = 0
+not_even = 0
+def recurs():
+    try:
+        number = int(input('Введите натуральное число: '))
+    except Exception as b:
+        print('Введите натуральное число или "0" для выхода из программы: ')
+        return recurs()
+    else:
+        def recurs_1(number):
+            global even
+            global not_even
+            if number // 10 != 0:
+                if number % 10 % 2 != 0:
+                    even += 1
+                else:
+                    not_even += 1
+                return recurs_1(number // 10)
+            elif number // 10 == 0:
+                if number % 2 != 0:
+                    even += 1
+                else:
+                    not_even += 1
+            print(f'В введенном числе всего {not_even + even} цифр, из которых {not_even} чётных и {even} нечётных')
+        recurs_1(number)
+recurs()
