@@ -5,3 +5,13 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+try:
+    n = int(input('Введите число N: '))
+    SUMM = 0
+    for num in range(N):
+        SUMM += num + 1
+    print(SUMM == n * (n + 1) / 2)
+
+except ValueError as v_err:
+    print(v_err)
