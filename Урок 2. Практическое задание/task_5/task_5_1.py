@@ -17,3 +17,9 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+counter = 1
+for i in range(32, 128):
+    print(f'{i} - {chr(i)}', end='   |   ')
+    if counter % 10 == 0:
+        print()
+    counter += 1
