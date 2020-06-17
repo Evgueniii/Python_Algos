@@ -10,3 +10,30 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+
+"""
+Задание не сделал. Не успел по времени к сожалению
+"""
+def seq(sequence):
+    steps = 0
+    max_sum = 0
+    for i in range(0, sequence):
+        try:
+            numa = input('Введите очередное число: ')
+            summ = 0
+            for n in numa:
+                summ += int(n)
+            if summ > max_sum:
+                max_sum = summ
+                h_numa = numa
+            steps += 1
+        except ValueError:
+           print('Вы вставили не то значение. Попробуйте еще раз!!!')
+
+    return f'Наибольше число по сумме цифр: {h_numa}, сумма его цифр: {max_sum}'
+
+try:
+    sequence = int(input('Введите количество чисел: '))
+    print(seq(sequence))
+except ValueError:
+    print('Вы вставили не то значение. Попробуйте еще раз!!!')
