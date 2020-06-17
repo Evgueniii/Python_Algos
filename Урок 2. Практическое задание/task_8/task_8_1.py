@@ -12,3 +12,22 @@
 
 ЗДЕСЬ ДОЛЖНА БЫТЬ РЕАЛИЗАЦИЯ ЧЕРЕЗ ЦИКЛ
 """
+def seq(numa, numb):
+    count = 0
+    for i in range(1, numa + 1):
+        try:
+            numc = int(input(f'Число {str(i)}: '))
+            while numc > 0:
+                if numc % 10 == numb:
+                    count += 1
+                numc = numc // 10
+        except ValueError:
+            print(f"Вы вставили не то значение. Попробуйте еще раз!!!")
+    print(f"Было введено: {count} цифр, считаем чило: '{numb}'")
+
+try:
+    N = int(input('Сколько будет чисел? - '))
+    M = int(input('Какое число считать? - '))
+    seq(N, M)
+except ValueError:
+    print('Вы вставили не то значение. Попробуйте еще раз!!!')
