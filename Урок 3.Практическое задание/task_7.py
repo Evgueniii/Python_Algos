@@ -7,3 +7,21 @@
 Наименьший элемент: -86, встречается в этом массиве 1 раз
 Второй наименьший элемент: -73
 """
+
+from random import randint
+
+r = [randint(-86, 86) for _ in range(20)]
+print(f'Массив: {r}')
+
+min_1 = 0
+min_2 = 1
+
+for i in r:
+    if r[min_1] > i:
+        min_2 = min_1
+        min_1 = r.index(i)
+
+    elif r[min_2] > i:
+        min_2 = r.index(i)
+
+print(f'Два наименьших элемента: {r[min_1]} и {r[min_2]}')
