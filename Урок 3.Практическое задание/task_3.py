@@ -11,3 +11,19 @@
 6 позиции, а минимальное число  -49 стоит на    0 позиции
 [-49, 26, 41, 75, 23, 52, 88, 60, 69, -18]
 """
+
+from random import randint
+
+ar = [randint(-20, 20) for _ in range(10)]
+print(f'Старый массив: {ar}')
+
+n_max, n_min = 0, 0
+for i in ar:
+    if i > n_max:
+        n_max = i
+    elif i < n_min:
+        n_min = i
+
+ar[ar.index(n_max)], ar[ar.index(n_min)] = ar[ar.index(n_min)], ar[ar.index(n_max)]
+print(f'Новый массив:  {ar}')
+print(f'Поменяли местами числа {n_max} и {n_min}')
